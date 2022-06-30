@@ -14,64 +14,65 @@ export default function UniversityMain() {
     { display: "Alphabet, Descending", field: "name", order: "desc" },
   ];
   const filterItems = [
-    "AK",
-    "AL",
-    "AR",
-    "AS",
-    "AZ",
-    "CA",
-    "CO",
-    "CT",
-    "DC",
-    "DE",
-    "FL",
-    "GA",
-    "GU",
-    "HI",
-    "IA",
-    "ID",
-    "IL",
-    "IN",
-    "KS",
-    "KY",
-    "LA",
-    "MA",
-    "MD",
-    "ME",
-    "MI",
-    "MN",
-    "MO",
-    "MP",
-    "MS",
-    "MT",
-    "NC",
-    "ND",
-    "NE",
-    "NH",
-    "NJ",
-    "NM",
-    "NV",
-    "NY",
-    "OH",
-    "OK",
-    "OR",
-    "PA",
-    "PR",
-    "RI",
-    "SC",
-    "SD",
-    "TN",
-    "TX",
+    "Alaska",
+    "Alabama",
+    "Arkansas",
+    "American Samoa",
+    "Arizona",
+    "California",
+    "Colorado",
+    "Connecticut",
+    "District of Columbia",
+    "Delaware",
+    "Florida",
+    "Georgia",
+    "Guam",
+    "Hawaii",
+    "Iowa",
+    "Idaho",
+    "Illinois",
+    "Indiana",
+    "Kansas",
+    "Kentucky",
+    "Louisiana",
+    "Massachusetts",
+    "Maryland",
+    "Maine",
+    "Michigan",
+    "Minnesota",
+    "Missouri",
+    "Northern Mariana Islands",
+    "Mississippi",
+    "Montana",
+    "North Carolina	",
+    "North Dakota	",
+    "Nebraska",
+    "New Hampshire",
+    "New Jersey",
+    "New Mexico",
+    "Nevada",
+    "New York",
+    "Ohio",
+    "Oklahoma",
+    "Oregon",
+    "Pennsylvania",
+    "Puerto Rico",
+    "Rhode Island",
+    "South Carolina",
+    "South Dakota",
+    "Tennessee",
+    "Texas",
     "UM",
-    "UT",
-    "VA",
-    "VI",
-    "VT",
-    "WA",
-    "WI",
-    "WV",
-    "WY",
+    "Utah",
+    "Virginia",
+    "Virgin Islands",
+    "Vermont",
+    "Washington",
+    "Wisconsin",
+    "West Virginia",
+    "Wyoming",
   ];
+  const type = ["Public", "Private"];
 
   const [sort, setSort] = useState<any>(sortItems[0]);
   const [filters, setFilters] = useState<string[]>([]);
@@ -135,6 +136,22 @@ export default function UniversityMain() {
                   }
                 }}
                 options={filterItems.map((item) => {
+                  return { value: item, label: item };
+                })}
+                isSearchable={true}
+                styles={customStyles}
+              />
+            </div>
+            <div className="flex flex-row items-center ml-auto lg:ml-0 my-2 max-w-full">
+              <p className="px-5">Type:</p>
+              <Select
+                className="text-xs lg:text-base max-w-min"
+                onChange={(e) => {
+                  if (e) {
+                    setSort(e.value);
+                  }
+                }}
+                options={type.map((item) => {
                   return { value: item, label: item };
                 })}
                 isSearchable={true}

@@ -60,8 +60,7 @@ export default function UniversityInfo(props: any) {
             {uni.name}
           </div>
           <div className="text-gray-600 text-xs lg:text-base">
-            {uni.uni_acronym} ‧ {uni.location} ‧{" "}
-            {uni.uni_public ? "Public" : "Private"}
+            {uni.uni_acronym} ‧ {uni.location} ‧ {uni.uni_public ? "Public" : "Private"}
           </div>
         </div>
       </div>

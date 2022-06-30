@@ -81,7 +81,7 @@ export default function PoliticianInfo(props: any) {
           <div className="text-gray-600 text-xs lg:text-base">
             {getAge(poli.dob) +
               " Years Old" +
-              " ‧ " +
+              " ‧ " + "poli's dob: " + poli.dob + ". "+
               timeInCongress +
               " Years in Congress"}
           </div>
